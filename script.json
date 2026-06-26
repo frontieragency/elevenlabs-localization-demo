@@ -1,0 +1,30 @@
+{
+  "title": "Product announcement",
+  "lines": [
+    {
+      "language": "English",
+      "code": "en",
+      "text": "Meet the future of voice. Natural, expressive, and ready for production."
+    },
+    {
+      "language": "Spanish",
+      "code": "es",
+      "text": "Descubre el futuro de la voz. Natural, expresiva y lista para producción."
+    },
+    {
+      "language": "French",
+      "code": "fr",
+      "text": "Découvrez le futur de la voix. Naturelle, expressive et prête pour la production."
+    },
+    {
+      "language": "German",
+      "code": "de",
+      "text": "Erleben Sie die Zukunft der Stimme. Natürlich, ausdrucksstark und produktionsbereit."
+    },
+    {
+      "language": "Japanese",
+      "code": "ja",
+      "text": "音声の未来を体験してください。自然で、表現力豊かで、制作にすぐ使えます。"
+    }
+  ]
+}

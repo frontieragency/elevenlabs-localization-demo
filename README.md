@@ -1,0 +1,67 @@
+# Voice Localization Demo
+
+Take one script, render it in every target language, and keep the **same voice** across all of them. This is the core localization problem in media and content production: you want a piece of content available in many languages without losing the voice identity that makes it feel like *your* brand.
+
+It uses the [ElevenLabs](https://elevenlabs.io) multilingual text-to-speech model, so a single voice speaks each language naturally.
+
+## What it does
+
+Given a script localized into several languages, it generates one audio file per language using the same ElevenLabs voice:
+
+```
+Localizing "Product announcement" into 5 languages
+Voice: 21m00Tcm4TlvDq8ikWAM  |  Model: eleven_multilingual_v2
+
+  [en] English: Meet the future of voice...
+        -> output/en.mp3 (84,213 bytes)
+  [es] Spanish: Descubre el futuro de la voz...
+        -> output/es.mp3 (88,540 bytes)
+  ...
+Done. Same voice, every language.
+```
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env      # then add your ElevenLabs API key to .env
+```
+
+Get an API key at [elevenlabs.io](https://elevenlabs.io). The `.env` file is gitignored and must never be committed.
+
+## Usage
+
+```bash
+python localize.py
+```
+
+Options:
+
+```bash
+python localize.py --script script.json --voice-id <id> --out output
+```
+
+- `--script` — the localized script JSON (default `script.json`)
+- `--voice-id` — the ElevenLabs voice used for every language (default: a stock multilingual voice)
+- `--model-id` — the model (default `eleven_multilingual_v2`)
+- `--out` — where to write the audio (default `output/`)
+
+## The script file
+
+`script.json` holds a title and one entry per language:
+
+```json
+{
+  "title": "Product announcement",
+  "lines": [
+    { "language": "English", "code": "en", "text": "Meet the future of voice..." },
+    { "language": "Spanish", "code": "es", "text": "Descubre el futuro de la voz..." }
+  ]
+}
+```
+
+Swap in your own copy and language set to localize anything — a trailer line, an ad, an audiobook passage.
+
+## Why one voice across languages matters
+
+Localization is not just translation. If every language uses a different-sounding voice, the content stops feeling like one brand. Keeping a single, consistent voice across all of them is what turns translated text into a finished, production-ready piece of audio.
