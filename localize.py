@@ -43,6 +43,7 @@ def synthesize(client, text, voice_id, model_id):
 
 
 def main():
+    load_dotenv()  # load .env before argparse reads env-var defaults below
     parser = argparse.ArgumentParser(
         description="Localize a script into multiple languages with one ElevenLabs voice."
     )
